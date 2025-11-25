@@ -10,6 +10,21 @@ Since it relies on system uptime, Kronos detects and requires a new sync after e
 
 This plugin is based on [`Kronos`][1] in iOS and [`Kronos-Android`][2] in android for the whole SNTP protocol implementation.
 
+## Why Kronos?
+
+**Kronos provides a single source of truth for time** in your application, independent of device settings. Accurate time is crucial for many real-world applications:
+
+- **Financial transactions**: Ensuring precise timestamps for trading, payments, and transaction records
+- **Security & Authentication**: Time-sensitive tokens, session management, and security protocols that rely on accurate time
+- **Real-time collaboration**: Synchronizing events across multiple users and devices
+- **Analytics & Logging**: Accurate event tracking and debugging with reliable timestamps
+- **Scheduling & Reminders**: Ensuring timely notifications regardless of device clock manipulation
+- **Gaming**: Fair gameplay with synchronized game states and preventing time-based cheating
+- **IoT & Sensors**: Coordinating time-sensitive data collection across multiple devices
+- **Offline-first apps**: Maintain accurate time even when offline after initial sync, perfect for apps with local-first architecture
+
+Kronos protects your app from users who manually change their device time, either accidentally or intentionally, ensuring your app always has access to accurate time. Once synced, Kronos continues to provide accurate time even without internet connection by leveraging system uptime, making it the **reliable source of truth for time** in your application.
+
 [Android Example](https://github.com/hautvfami/flutter-kronos/releases/download/v0.0.2+1/app-release.apk)
 <p align="center">
   <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://github.com/hautvfami/flutter-kronos/releases/download/v0.0.2+1/app-release.apk&size=150x150" />
@@ -55,6 +70,16 @@ DateTime? FlutterKronos.getNtpDateTime(); //return null if Kronos has not yet be
 <p align="center">
     <img src="https://www.pngplay.com/wp-content/uploads/8/In-Time-Transparent-Background.png" />
 </p>
+
+## Support
+
+If you have any questions or issues, please contact me at [hautv.fami@gmail.com](mailto:hautv.fami@gmail.com)
+
+## Donate
+
+If you find this plugin helpful, consider supporting the development:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/hautvfami)
 
 [1]: https://github.com/lyft/Kronos
 [2]: https://github.com/lyft/Kronos-Android

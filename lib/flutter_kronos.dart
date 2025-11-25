@@ -13,10 +13,8 @@ class FlutterKronos {
 
   static Future<DateTime?> get getDateTime async {
     final int? _ms = await _channel.invokeMethod("GET_CURRENT_TIME_MS");
-    if (_ms != null)
-      return DateTime.fromMillisecondsSinceEpoch(_ms);
-    else
-      return null;
+    if (_ms != null) return DateTime.fromMillisecondsSinceEpoch(_ms);
+    return null;
   }
 
   /// If the NTP server cannot be reached or Kronos has not yet been synced,
@@ -32,13 +30,9 @@ class FlutterKronos {
 
   static Future<DateTime?> get getNtpDateTime async {
     final int? _ms = await _channel.invokeMethod("GET_CURRENT_NTP_TIME_MS");
-    if (_ms != null)
-      return DateTime.fromMillisecondsSinceEpoch(_ms);
-    else
-      return null;
+    if (_ms != null) return DateTime.fromMillisecondsSinceEpoch(_ms);
+    return null;
   }
 
-  static void sync() {
-    _channel.invokeMethod("SYNC");
-  }
+  static void sync() => _channel.invokeMethod("SYNC");
 }
